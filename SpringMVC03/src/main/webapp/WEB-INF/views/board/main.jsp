@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>spring mvc02</title>
+  <title>spring mvc03</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -239,9 +239,11 @@
   </script>
 </head>
 <body>
+
+<jsp:include page="../common/header.jsp"/>
  
 <div class="container">
-  <h2>spring mvc02</h2>
+  <h2>spring mvc03</h2>
   <div class="panel panel-default">
     <div class="panel-heading">board</div>
     <div class="panel-body" id="view">Panel Content</div>
