@@ -12,62 +12,52 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script type="text/javascript">
+  
 	$(document).ready(function(){
   		if(${!empty msgType}){
   				$("messageType").attr("class", "modal-content panel-warning");
   			$("#myMessage").modal("show");
   		}
   	});
+  
   </script>
 </head>
 <body>
+ 
 
-
-  
 <div class="container">
-<jsp:include page="common/header.jsp"/>
-<c:if test="${empty mvo }">
-	<h3>spring mvc0033</h3>
-
-</c:if>
-<c:if test="${!empty mvo }">
-	<h3>${mvo.memName }님 환영</h3>
-
-</c:if>
-
+ <jsp:include page="../common/header.jsp"/>
+  <h2>spring mvc033</h2>
   <div class="panel panel-default">
-    <div> 이미지
-    	<img src="${contextPath }/resources/images/main.png" style="width: 100%; height: 400px; "/>
-    </div>
+    <div class="panel-heading">로그인화면 </div>
     <div class="panel-body">
-		<ul class="nav nav-tabs">
-		  <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-		  <li><a data-toggle="tab" href="#menu1">게시판</a></li>
-		  <li><a data-toggle="tab" href="#menu2">공지사항</a></li>
-		</ul>
+
+		<form action="${contextPath }/memLogin.do" method="post">
+			<table class="table table-boardered" style="text-align: center; border: 1px solid #dddddd;">
+				<tr>
+					<td style="width: 110px; vertical-align: middle;">아이디
+					</td>
+					<td colspan="2"><input id="memID" name="memID" class="form-control" type="text" maxlength="20" placeholder="아이디를 입력"/>
+					</td>
+					
+					</tr>
+				<tr>
+					<td style="width: 110px; vertical-align: middle;">비밀번호
+					</td>
+					<td colspan="2"><input id="memPassword" name="memPassword"  class="form-control" type="password" maxlength="20" placeholder="paaword를 입력"/>
+					</td>
+				</tr>					
+
+				<tr>
+					<td colspan="2" style="text-align: left;">
+					<input type="submit" class="btn btn-primary btn-sm pull-right" value="로그인"  /> 
+					</td>
+				</tr>																
+			</table>
+		</form>
 		
-		<div class="tab-content">
-		  <div id="home" class="tab-pane fade in active">
-		    <h3>HOME</h3>
-		    <p>Some content.</p>
-		  </div>
-		  <div id="menu1" class="tab-pane fade">
-		    <h3>게시판</h3>
-		    <p>Some content in menu 1.</p>
-		  </div>
-		  <div id="menu2" class="tab-pane fade">
-		    <h3>공지사항</h3>
-		    <p>Some content in menu 2.</p>
-		  </div>
-		</div>
 	</div>
-    <div class="panel-footer">나다</div>    
-  </div>
-
-  <h3>Collapsible Navbar</h3>
-
-</div>
-
+	
 	<div id="myMessage" class="modal fade" role="dialog">
 	  <div class="modal-dialog">
 	
@@ -87,6 +77,10 @@
 	
 	  </div>
 	</div>
+	
+    <div class="panel-footer">나다</div>    
+  </div>
+</div>
 
 </body>
 </html>
