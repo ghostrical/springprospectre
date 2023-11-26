@@ -12,56 +12,56 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script type="text/javascript">
+  
 	$(document).ready(function(){
   		if(${!empty msgType}){
   				$("messageType").attr("class", "modal-content panel-warning");
   			$("#myMessage").modal("show");
   		}
   	});
+  
   </script>
 </head>
 <body>
+ 
 
-
-  
 <div class="container">
-<jsp:include page="common/header.jsp"/>
-
-
-
+ <jsp:include page="../common/header.jsp"/>
+  <h2>spring mvc033</h2>
   <div class="panel panel-default">
-    <div> 이미지
-    	<img src="${contextPath }/resources/images/main.png" style="width: 100%; height: 400px; "/>
-    </div>
+    <div class="panel-heading">회원사진등록 </div>
     <div class="panel-body">
-		<ul class="nav nav-tabs">
-		  <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-		  <li><a data-toggle="tab" href="#menu1">게시판</a></li>
-		  <li><a data-toggle="tab" href="#menu2">공지사항</a></li>
-		</ul>
+
+		<form action="${contextPath }/memImageUpdate.do" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="memID" value="${mvo.memID }" />
+			<table class="table table-boardered" style="text-align: center; border: 1px solid #dddddd;">
+				<tr>
+					<td style="width: 110px; vertical-align: middle;">아이디
+					</td>
+					<td>${mvo.memID }</td>
+					
+					
+				</tr>
+				<tr>
+					<td style="width: 110px; vertical-align: middle;">사진 업로드 
+					</td>
+					<td colspan="2"><span class="btn btn-default">
+					이미지 업로드용 
+					<input type="file" name="memProfile" />
+					</span>
+					</td>
+				</tr>					
+
+				<tr>
+					<td colspan="2" style="text-align: left;">
+					<input type="submit" class="btn btn-primary btn-sm pull-right" value="등록"  /> 
+					</td>
+				</tr>																
+			</table>
+		</form>
 		
-		<div class="tab-content">
-		  <div id="home" class="tab-pane fade in active">
-		    <h3>HOME</h3>
-		    <p>Some content.</p>
-		  </div>
-		  <div id="menu1" class="tab-pane fade">
-		    <h3>게시판</h3>
-		    <p>Some content in menu 1.</p>
-		  </div>
-		  <div id="menu2" class="tab-pane fade">
-		    <h3>공지사항</h3>
-		    <p>Some content in menu 2.</p>
-		  </div>
-		</div>
 	</div>
-    <div class="panel-footer">나다</div>    
-  </div>
-
-  <h3>Collapsible Navbar</h3>
-
-</div>
-
+	
 	<div id="myMessage" class="modal fade" role="dialog">
 	  <div class="modal-dialog">
 	
@@ -81,6 +81,10 @@
 	
 	  </div>
 	</div>
+	
+    <div class="panel-footer">나다</div>    
+  </div>
+</div>
 
 </body>
 </html>
