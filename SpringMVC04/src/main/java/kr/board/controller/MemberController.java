@@ -156,6 +156,8 @@ public class MemberController {
 				rttr.addFlashAttribute("msgType", "success msg");
 				rttr.addFlashAttribute("msg","수정성공");
 				
+				Member mvo = memberMapper.getMember(m.getMemID());
+				
 				session.setAttribute("mvo", m);
 				
 				return "redirect:/";
